@@ -203,14 +203,4 @@
     }
 }
 
-#pragma mark UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView.contentOffset.y < 0) {
-        [self.tableView setBackgroundColor:[UIColor slangBlack]];
-    }
-    else {
-        [self.tableView setBackgroundColor:[UIColor slangLightGrey]];
-    }
-}
-
 @end
