@@ -9,11 +9,32 @@
 /* Begin PBXBuildFile section */
 		BC0B35491AABAB54009FB458 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35481AABAB54009FB458 /* main.m */; };
 		BC0B354C1AABAB54009FB458 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B354B1AABAB54009FB458 /* AppDelegate.m */; };
-		BC0B354F1AABAB54009FB458 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B354E1AABAB54009FB458 /* ViewController.m */; };
 		BC0B35521AABAB54009FB458 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35501AABAB54009FB458 /* Main.storyboard */; };
 		BC0B35541AABAB54009FB458 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35531AABAB54009FB458 /* Images.xcassets */; };
 		BC0B35571AABAB54009FB458 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35551AABAB54009FB458 /* LaunchScreen.xib */; };
 		BC0B35631AABAB54009FB458 /* SlangAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35621AABAB54009FB458 /* SlangAppTests.m */; };
+		BC0B356F1AABAC3A009FB458 /* SLAWord.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B356E1AABAC3A009FB458 /* SLAWord.m */; };
+		BC0B35721AABAD8B009FB458 /* SLADefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35711AABAD8B009FB458 /* SLADefinition.m */; };
+		BC0B35751AABD1A9009FB458 /* SLAVineVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35741AABD1A9009FB458 /* SLAVineVideo.m */; };
+		BC0B357D1AABE62B009FB458 /* SLAAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B357C1AABE62B009FB458 /* SLAAPI.m */; };
+		BC0B35801AABEA5E009FB458 /* SLABaseAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B357F1AABEA5E009FB458 /* SLABaseAPI.m */; };
+		BC0B35831AABF0E3009FB458 /* SLAWordDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35821AABF0E3009FB458 /* SLAWordDataSource.m */; };
+		BC0B35871AAC041A009FB458 /* SLAHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35861AAC041A009FB458 /* SLAHomeViewController.m */; };
+		BC0B358A1AAC0BD7009FB458 /* SLADefinitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35891AAC0BD7009FB458 /* SLADefinitionViewController.m */; };
+		BC0B358D1AAC139C009FB458 /* SLADefinitionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B358C1AAC139C009FB458 /* SLADefinitionCell.xib */; };
+		BC0B35931AAC16FF009FB458 /* SLADefinitionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35921AAC16FF009FB458 /* SLADefinitionCell.m */; };
+		BC0B35951AAC39F2009FB458 /* SLAWordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35941AAC39F2009FB458 /* SLAWordCell.xib */; };
+		BC0B35981AAC3A14009FB458 /* SLAWordCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35971AAC3A14009FB458 /* SLAWordCell.m */; };
+		BC0B359A1AACE03F009FB458 /* SLADropdownHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35991AACE03F009FB458 /* SLADropdownHeaderCell.xib */; };
+		BC0B359D1AACE3BB009FB458 /* SLADropdownHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B359C1AACE3BB009FB458 /* SLADropdownHeaderCell.m */; };
+		BC0B35A11AACF1E5009FB458 /* UIColor+SlangApp.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35A01AACF1E5009FB458 /* UIColor+SlangApp.m */; };
+		BC0B35A31AACF6CD009FB458 /* SLAExampleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35A21AACF6CD009FB458 /* SLAExampleCell.xib */; };
+		BC0B35A61AACF729009FB458 /* SLAExampleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35A51AACF729009FB458 /* SLAExampleCell.m */; };
+		BC0B35AA1AAD083C009FB458 /* SLATagsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35A91AAD083C009FB458 /* SLATagsCell.xib */; };
+		BC0B35AD1AAD08D3009FB458 /* SLATagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35AC1AAD08D3009FB458 /* SLATagsCell.m */; };
+		BC0B35B01AAD0931009FB458 /* SLATagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35AF1AAD0931009FB458 /* SLATagCell.m */; };
+		BC0B35B21AAD0943009FB458 /* SLATagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35B11AAD0943009FB458 /* SLATagCell.xib */; };
+		C425C25856DE4A56B3DB9545 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380E04B93492474AB9A38BE5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,19 +48,55 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		380E04B93492474AB9A38BE5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5386A252AAA44ABA9E13414 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		BC0B35431AABAB54009FB458 /* SlangApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlangApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0B35471AABAB54009FB458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0B35481AABAB54009FB458 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BC0B354A1AABAB54009FB458 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC0B354B1AABAB54009FB458 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BC0B354D1AABAB54009FB458 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BC0B354E1AABAB54009FB458 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		BC0B35511AABAB54009FB458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BC0B35531AABAB54009FB458 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BC0B35561AABAB54009FB458 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BC0B355C1AABAB54009FB458 /* SlangAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SlangAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0B35611AABAB54009FB458 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC0B35621AABAB54009FB458 /* SlangAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SlangAppTests.m; sourceTree = "<group>"; };
+		BC0B356D1AABAC3A009FB458 /* SLAWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAWord.h; path = models/SLAWord.h; sourceTree = "<group>"; };
+		BC0B356E1AABAC3A009FB458 /* SLAWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAWord.m; path = models/SLAWord.m; sourceTree = "<group>"; };
+		BC0B35701AABAD8B009FB458 /* SLADefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLADefinition.h; path = models/SLADefinition.h; sourceTree = "<group>"; };
+		BC0B35711AABAD8B009FB458 /* SLADefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLADefinition.m; path = models/SLADefinition.m; sourceTree = "<group>"; };
+		BC0B35731AABD1A9009FB458 /* SLAVineVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAVineVideo.h; path = models/SLAVineVideo.h; sourceTree = "<group>"; };
+		BC0B35741AABD1A9009FB458 /* SLAVineVideo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAVineVideo.m; path = models/SLAVineVideo.m; sourceTree = "<group>"; };
+		BC0B357B1AABE62B009FB458 /* SLAAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAAPI.h; path = api/SLAAPI.h; sourceTree = "<group>"; };
+		BC0B357C1AABE62B009FB458 /* SLAAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAAPI.m; path = api/SLAAPI.m; sourceTree = "<group>"; };
+		BC0B357E1AABEA5E009FB458 /* SLABaseAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLABaseAPI.h; path = api/SLABaseAPI.h; sourceTree = "<group>"; };
+		BC0B357F1AABEA5E009FB458 /* SLABaseAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLABaseAPI.m; path = api/SLABaseAPI.m; sourceTree = "<group>"; };
+		BC0B35811AABF0E3009FB458 /* SLAWordDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAWordDataSource.h; path = datasource/SLAWordDataSource.h; sourceTree = "<group>"; };
+		BC0B35821AABF0E3009FB458 /* SLAWordDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAWordDataSource.m; path = datasource/SLAWordDataSource.m; sourceTree = "<group>"; };
+		BC0B35851AAC041A009FB458 /* SLAHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAHomeViewController.h; path = controllers/home/SLAHomeViewController.h; sourceTree = "<group>"; };
+		BC0B35861AAC041A009FB458 /* SLAHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAHomeViewController.m; path = controllers/home/SLAHomeViewController.m; sourceTree = "<group>"; };
+		BC0B35881AAC0BD7009FB458 /* SLADefinitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLADefinitionViewController.h; path = controllers/definition/SLADefinitionViewController.h; sourceTree = "<group>"; };
+		BC0B35891AAC0BD7009FB458 /* SLADefinitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLADefinitionViewController.m; path = controllers/definition/SLADefinitionViewController.m; sourceTree = "<group>"; };
+		BC0B358C1AAC139C009FB458 /* SLADefinitionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLADefinitionCell.xib; path = controllers/definition/SLADefinitionCell.xib; sourceTree = "<group>"; };
+		BC0B35911AAC16FF009FB458 /* SLADefinitionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLADefinitionCell.h; path = controllers/definition/SLADefinitionCell.h; sourceTree = "<group>"; };
+		BC0B35921AAC16FF009FB458 /* SLADefinitionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLADefinitionCell.m; path = controllers/definition/SLADefinitionCell.m; sourceTree = "<group>"; };
+		BC0B35941AAC39F2009FB458 /* SLAWordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLAWordCell.xib; path = controllers/definition/SLAWordCell.xib; sourceTree = "<group>"; };
+		BC0B35961AAC3A14009FB458 /* SLAWordCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAWordCell.h; path = controllers/definition/SLAWordCell.h; sourceTree = "<group>"; };
+		BC0B35971AAC3A14009FB458 /* SLAWordCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAWordCell.m; path = controllers/definition/SLAWordCell.m; sourceTree = "<group>"; };
+		BC0B35991AACE03F009FB458 /* SLADropdownHeaderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLADropdownHeaderCell.xib; path = controllers/definition/SLADropdownHeaderCell.xib; sourceTree = "<group>"; };
+		BC0B359B1AACE3BB009FB458 /* SLADropdownHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLADropdownHeaderCell.h; path = controllers/definition/SLADropdownHeaderCell.h; sourceTree = "<group>"; };
+		BC0B359C1AACE3BB009FB458 /* SLADropdownHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLADropdownHeaderCell.m; path = controllers/definition/SLADropdownHeaderCell.m; sourceTree = "<group>"; };
+		BC0B359F1AACF1E5009FB458 /* UIColor+SlangApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+SlangApp.h"; path = "utils/UIColor+SlangApp.h"; sourceTree = "<group>"; };
+		BC0B35A01AACF1E5009FB458 /* UIColor+SlangApp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+SlangApp.m"; path = "utils/UIColor+SlangApp.m"; sourceTree = "<group>"; };
+		BC0B35A21AACF6CD009FB458 /* SLAExampleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLAExampleCell.xib; path = controllers/definition/SLAExampleCell.xib; sourceTree = "<group>"; };
+		BC0B35A41AACF729009FB458 /* SLAExampleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAExampleCell.h; path = controllers/definition/SLAExampleCell.h; sourceTree = "<group>"; };
+		BC0B35A51AACF729009FB458 /* SLAExampleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAExampleCell.m; path = controllers/definition/SLAExampleCell.m; sourceTree = "<group>"; };
+		BC0B35A91AAD083C009FB458 /* SLATagsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLATagsCell.xib; path = controllers/definition/SLATagsCell.xib; sourceTree = "<group>"; };
+		BC0B35AB1AAD08D3009FB458 /* SLATagsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLATagsCell.h; path = controllers/definition/SLATagsCell.h; sourceTree = "<group>"; };
+		BC0B35AC1AAD08D3009FB458 /* SLATagsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLATagsCell.m; path = controllers/definition/SLATagsCell.m; sourceTree = "<group>"; };
+		BC0B35AE1AAD0931009FB458 /* SLATagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLATagCell.h; path = controllers/definition/SLATagCell.h; sourceTree = "<group>"; };
+		BC0B35AF1AAD0931009FB458 /* SLATagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLATagCell.m; path = controllers/definition/SLATagCell.m; sourceTree = "<group>"; };
+		BC0B35B11AAD0943009FB458 /* SLATagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLATagCell.xib; path = controllers/definition/SLATagCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C425C25856DE4A56B3DB9545 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +118,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5813B55BF2BA4ECB90CA4AC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				380E04B93492474AB9A38BE5 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC0B353A1AABAB54009FB458 = {
 			isa = PBXGroup;
 			children = (
 				BC0B35451AABAB54009FB458 /* SlangApp */,
 				BC0B355F1AABAB54009FB458 /* SlangAppTests */,
 				BC0B35441AABAB54009FB458 /* Products */,
+				B5386A252AAA44ABA9E13414 /* Pods.xcconfig */,
+				5813B55BF2BA4ECB90CA4AC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,9 +151,12 @@
 			children = (
 				BC0B354A1AABAB54009FB458 /* AppDelegate.h */,
 				BC0B354B1AABAB54009FB458 /* AppDelegate.m */,
-				BC0B354D1AABAB54009FB458 /* ViewController.h */,
-				BC0B354E1AABAB54009FB458 /* ViewController.m */,
-				BC0B35501AABAB54009FB458 /* Main.storyboard */,
+				BC0B357A1AABE592009FB458 /* controllers */,
+				BC0B35791AABE57C009FB458 /* datasource */,
+				BC0B35781AABE566009FB458 /* api */,
+				BC0B356C1AABAB9C009FB458 /* models */,
+				BC0B35841AAC0038009FB458 /* storyboards */,
+				BC0B359E1AACF1C2009FB458 /* utils */,
 				BC0B35531AABAB54009FB458 /* Images.xcassets */,
 				BC0B35551AABAB54009FB458 /* LaunchScreen.xib */,
 				BC0B35461AABAB54009FB458 /* Supporting Files */,
@@ -119,6 +190,125 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BC0B356C1AABAB9C009FB458 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B356D1AABAC3A009FB458 /* SLAWord.h */,
+				BC0B356E1AABAC3A009FB458 /* SLAWord.m */,
+				BC0B35701AABAD8B009FB458 /* SLADefinition.h */,
+				BC0B35711AABAD8B009FB458 /* SLADefinition.m */,
+				BC0B35731AABD1A9009FB458 /* SLAVineVideo.h */,
+				BC0B35741AABD1A9009FB458 /* SLAVineVideo.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		BC0B35761AABE3BB009FB458 /* home */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35851AAC041A009FB458 /* SLAHomeViewController.h */,
+				BC0B35861AAC041A009FB458 /* SLAHomeViewController.m */,
+			);
+			name = home;
+			sourceTree = "<group>";
+		};
+		BC0B35771AABE3D3009FB458 /* definition */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B358B1AAC0E3A009FB458 /* UI */,
+				BC0B35881AAC0BD7009FB458 /* SLADefinitionViewController.h */,
+				BC0B35891AAC0BD7009FB458 /* SLADefinitionViewController.m */,
+			);
+			name = definition;
+			sourceTree = "<group>";
+		};
+		BC0B35781AABE566009FB458 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B357E1AABEA5E009FB458 /* SLABaseAPI.h */,
+				BC0B357F1AABEA5E009FB458 /* SLABaseAPI.m */,
+				BC0B357B1AABE62B009FB458 /* SLAAPI.h */,
+				BC0B357C1AABE62B009FB458 /* SLAAPI.m */,
+			);
+			name = api;
+			sourceTree = "<group>";
+		};
+		BC0B35791AABE57C009FB458 /* datasource */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35811AABF0E3009FB458 /* SLAWordDataSource.h */,
+				BC0B35821AABF0E3009FB458 /* SLAWordDataSource.m */,
+			);
+			name = datasource;
+			sourceTree = "<group>";
+		};
+		BC0B357A1AABE592009FB458 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35761AABE3BB009FB458 /* home */,
+				BC0B35771AABE3D3009FB458 /* definition */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		BC0B35841AAC0038009FB458 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35501AABAB54009FB458 /* Main.storyboard */,
+			);
+			name = storyboards;
+			sourceTree = "<group>";
+		};
+		BC0B358B1AAC0E3A009FB458 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35A71AAD07F6009FB458 /* definitions */,
+				BC0B35A81AAD0810009FB458 /* tags */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		BC0B359E1AACF1C2009FB458 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B359F1AACF1E5009FB458 /* UIColor+SlangApp.h */,
+				BC0B35A01AACF1E5009FB458 /* UIColor+SlangApp.m */,
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		BC0B35A71AAD07F6009FB458 /* definitions */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B358C1AAC139C009FB458 /* SLADefinitionCell.xib */,
+				BC0B35911AAC16FF009FB458 /* SLADefinitionCell.h */,
+				BC0B35921AAC16FF009FB458 /* SLADefinitionCell.m */,
+				BC0B35941AAC39F2009FB458 /* SLAWordCell.xib */,
+				BC0B35961AAC3A14009FB458 /* SLAWordCell.h */,
+				BC0B35971AAC3A14009FB458 /* SLAWordCell.m */,
+				BC0B35991AACE03F009FB458 /* SLADropdownHeaderCell.xib */,
+				BC0B359B1AACE3BB009FB458 /* SLADropdownHeaderCell.h */,
+				BC0B359C1AACE3BB009FB458 /* SLADropdownHeaderCell.m */,
+				BC0B35A21AACF6CD009FB458 /* SLAExampleCell.xib */,
+				BC0B35A41AACF729009FB458 /* SLAExampleCell.h */,
+				BC0B35A51AACF729009FB458 /* SLAExampleCell.m */,
+			);
+			name = definitions;
+			sourceTree = "<group>";
+		};
+		BC0B35A81AAD0810009FB458 /* tags */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35A91AAD083C009FB458 /* SLATagsCell.xib */,
+				BC0B35AB1AAD08D3009FB458 /* SLATagsCell.h */,
+				BC0B35AC1AAD08D3009FB458 /* SLATagsCell.m */,
+				BC0B35B11AAD0943009FB458 /* SLATagCell.xib */,
+				BC0B35AE1AAD0931009FB458 /* SLATagCell.h */,
+				BC0B35AF1AAD0931009FB458 /* SLATagCell.m */,
+			);
+			name = tags;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +316,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BC0B35661AABAB55009FB458 /* Build configuration list for PBXNativeTarget "SlangApp" */;
 			buildPhases = (
+				00EE522122A74B85A4F78451 /* Check Pods Manifest.lock */,
 				BC0B353F1AABAB54009FB458 /* Sources */,
 				BC0B35401AABAB54009FB458 /* Frameworks */,
 				BC0B35411AABAB54009FB458 /* Resources */,
+				9F8EC234A63D47C59E34F9F7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -199,9 +391,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0B358D1AAC139C009FB458 /* SLADefinitionCell.xib in Resources */,
 				BC0B35521AABAB54009FB458 /* Main.storyboard in Resources */,
+				BC0B359A1AACE03F009FB458 /* SLADropdownHeaderCell.xib in Resources */,
 				BC0B35571AABAB54009FB458 /* LaunchScreen.xib in Resources */,
+				BC0B35A31AACF6CD009FB458 /* SLAExampleCell.xib in Resources */,
 				BC0B35541AABAB54009FB458 /* Images.xcassets in Resources */,
+				BC0B35951AAC39F2009FB458 /* SLAWordCell.xib in Resources */,
+				BC0B35B21AAD0943009FB458 /* SLATagCell.xib in Resources */,
+				BC0B35AA1AAD083C009FB458 /* SLATagsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,12 +412,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		00EE522122A74B85A4F78451 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9F8EC234A63D47C59E34F9F7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BC0B353F1AABAB54009FB458 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC0B354F1AABAB54009FB458 /* ViewController.m in Sources */,
+				BC0B359D1AACE3BB009FB458 /* SLADropdownHeaderCell.m in Sources */,
+				BC0B35B01AAD0931009FB458 /* SLATagCell.m in Sources */,
+				BC0B35A11AACF1E5009FB458 /* UIColor+SlangApp.m in Sources */,
+				BC0B35721AABAD8B009FB458 /* SLADefinition.m in Sources */,
+				BC0B356F1AABAC3A009FB458 /* SLAWord.m in Sources */,
+				BC0B35A61AACF729009FB458 /* SLAExampleCell.m in Sources */,
+				BC0B358A1AAC0BD7009FB458 /* SLADefinitionViewController.m in Sources */,
+				BC0B35871AAC041A009FB458 /* SLAHomeViewController.m in Sources */,
+				BC0B35AD1AAD08D3009FB458 /* SLATagsCell.m in Sources */,
+				BC0B35981AAC3A14009FB458 /* SLAWordCell.m in Sources */,
+				BC0B357D1AABE62B009FB458 /* SLAAPI.m in Sources */,
+				BC0B35751AABD1A9009FB458 /* SLAVineVideo.m in Sources */,
+				BC0B35801AABEA5E009FB458 /* SLABaseAPI.m in Sources */,
+				BC0B35831AABF0E3009FB458 /* SLAWordDataSource.m in Sources */,
+				BC0B35931AAC16FF009FB458 /* SLADefinitionCell.m in Sources */,
 				BC0B354C1AABAB54009FB458 /* AppDelegate.m in Sources */,
 				BC0B35491AABAB54009FB458 /* main.m in Sources */,
 			);
@@ -341,9 +586,11 @@
 		};
 		BC0B35671AABAB55009FB458 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5386A252AAA44ABA9E13414 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SlangApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -351,9 +598,11 @@
 		};
 		BC0B35681AABAB55009FB458 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5386A252AAA44ABA9E13414 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SlangApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -412,6 +661,7 @@
 				BC0B35681AABAB55009FB458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC0B35691AABAB55009FB458 /* Build configuration list for PBXNativeTarget "SlangAppTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +670,7 @@
 				BC0B356B1AABAB55009FB458 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

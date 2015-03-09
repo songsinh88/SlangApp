@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "UIColor+SlangApp.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self customNavigationBar];
+    
     return YES;
 }
 
@@ -40,6 +43,19 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark UINavigationAppearance
+- (void)customNavigationBar {
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor slangGreen]];
+    NSDictionary *textAttr = [NSDictionary dictionaryWithObjectsAndKeys:
+                              [UIColor whiteColor], NSForegroundColorAttributeName,
+                              [UIFont fontWithName:@"Helvetica Neue" size:15.0], NSFontAttributeName,
+                              nil];
+    [[UINavigationBar appearance] setTitleTextAttributes:textAttr];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:textAttr  forState:UIControlStateNormal];
 }
 
 @end
