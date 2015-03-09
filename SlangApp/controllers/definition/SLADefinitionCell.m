@@ -24,7 +24,7 @@
 }
 
 - (void)configureCellUsingWord:(SLAWord *)wordObject usingIndex:(NSInteger)index {
-    SLADefinition *definition = [wordObject.definitions objectAtIndex:index];
+    SLADefinition *definition = (SLADefinition*)[wordObject.definitions objectAtIndex:index];
     
     definitionLabel.text = definition.definition;
 }

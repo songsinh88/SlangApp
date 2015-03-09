@@ -26,7 +26,7 @@
 }
 
 - (void)configureCellUsingWord:(SLAWord *)wordObject usingIndex:(NSInteger)index {
-    SLADefinition *definition = [wordObject.definitions objectAtIndex:index];
+    SLADefinition *definition = (SLADefinition*)[wordObject.definitions objectAtIndex:index];
     if (definition.example != nil && definition.example.length > 0) {
         // Only set if the defintion has an example
         exampleLabel.text = definition.example;
