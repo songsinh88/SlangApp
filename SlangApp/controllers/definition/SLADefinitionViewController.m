@@ -13,6 +13,7 @@
 #import "SLADropdownHeaderCell.h"
 #import "SLAExampleCell.h"
 #import "SLATagsCell.h"
+#import "SLAVineCell.h"
 #import "SLAWord.h"
 #import "UIColor+SlangApp.h"
 
@@ -25,6 +26,8 @@
 @synthesize hideDefinitions;
 @synthesize hideTags;
 @synthesize hideVines;
+@synthesize currentVineIndexPath;
+@synthesize lastYOffset;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -41,9 +44,11 @@
     hideDefinitions = NO;
     hideTags = NO;
     hideVines = NO;
+    currentVineIndexPath = nil;
+    lastYOffset = 0;
     
     // Register Cells
-    NSArray *cellNames = @[@"SLAWordCell", @"SLADefinitionCell", @"SLADropdownHeaderCell", @"SLAExampleCell", @"SLATagsCell"];
+    NSArray *cellNames = @[@"SLAWordCell", @"SLADefinitionCell", @"SLADropdownHeaderCell", @"SLAExampleCell", @"SLATagsCell", @"SLAVineCell"];
     for (NSString *cellName in cellNames) {
         [self.tableView registerNib:[UINib nibWithNibName:cellName bundle:[NSBundle mainBundle]] forCellReuseIdentifier:cellName];
     }
@@ -57,11 +62,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+
+#pragma mark - TableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -79,6 +85,9 @@
             return hideTags ? 1 : 2;
             break;
             
+        case 3:
+            return wordObject.vineVideos.count;
+        
         default:
             return 0;
             break;
@@ -118,7 +127,7 @@
             }
         }
     }
-    else {
+    else if (indexPath.section == 2){
         if (indexPath.row == 0) {
             // Tags Header
             SLADropdownHeaderCell *headerCell = (SLADropdownHeaderCell*)[tableView dequeueReusableCellWithIdentifier:@"SLADropdownHeaderCell" forIndexPath:indexPath];
@@ -133,6 +142,13 @@
             [tagsCell.tagsCollectionView reloadData];
             return tagsCell;
         }
+    }
+    else {
+        // Vines
+        SLAVineCell *vineCell = (SLAVineCell*)[tableView dequeueReusableCellWithIdentifier:@"SLAVineCell" forIndexPath:indexPath];
+        [vineCell.vinePlayerHeightConstraint setConstant:tableView.frame.size.width];
+        [vineCell configureCellUsingVine:[wordObject.vineVideos objectAtIndex:indexPath.row]];
+        return vineCell;
     }
 }
 
@@ -175,12 +191,78 @@
 - (void)didGetDefinitionSuccessfully:(SLAWord *)wordResponse {
     NSLog(@"Did get definition");
     wordObject = wordResponse;
-    [self.tableView reloadData];
+    [[SLAWordDataSource datasource] getVinesUsingWord:wordObject.word usingDelegate:self];
 }
 
 - (void)didFailGettingDefintion:(NSError *)error {
     NSLog(@"Did fail getting definition");
 }
+
+- (void)didGetVinesSuccessfully:(NSArray *)vinesReponse {
+    NSLog(@"Did get vines!");
+    wordObject.vineVideos = vinesReponse;
+    [self.tableView reloadData];
+}
+
+- (void)didFailGettingVines:(NSError *)error {
+    NSLog(@"Did fail getting vines");
+}
+
+#pragma mark UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSArray* cells = self.tableView.visibleCells;
+    
+    // Todo: Only do this when in Vine section
+    // Currently being done for all cell
+    // Idk
+    // Get realative offset to check if they are scrolling up/down
+    CGFloat currentOffset = scrollView.contentOffset.y;
+    currentOffset = currentOffset < 0 ? 0 : currentOffset;
+    CGFloat relativeOffset = lastYOffset - currentOffset;
+    
+    // Store old vine index path
+    NSIndexPath *oldVineIndexPath = currentVineIndexPath;
+    
+    if (relativeOffset > 0) {
+        // Going up. Prioritize last cells
+        for(NSInteger i = 0; i<cells.count; i++) {
+            if ([self checkIntersectionOfCell:[cells objectAtIndex:i] inScrollView:scrollView]) {
+                // Cell intersect, make it current
+                currentVineIndexPath = [self.tableView indexPathForCell:[cells objectAtIndex:i]];
+            }
+        }
+    }
+    else {
+        // Going down. Prioritize first cells
+        for(NSInteger i = cells.count-1; i>=0; i--) {
+            if ([self checkIntersectionOfCell:[cells objectAtIndex:i] inScrollView:scrollView]) {
+                // Cell intersect, make it current
+                currentVineIndexPath = [self.tableView indexPathForCell:[cells objectAtIndex:i]];
+            }
+        }
+    }
+    
+    if (oldVineIndexPath != nil) {
+        // Stop the last video
+        
+    }
+    
+    // Play the current video
+    
+    // Set new last y offset
+    lastYOffset = scrollView.contentOffset.y;
+}
+
+- (BOOL)checkIntersectionOfCell:(SLAVineCell *)cell inScrollView:(UIScrollView *)aScrollView {
+    // Check if cell intersects the second quarter of the tableview
+    CGRect scrollViewSubRect = CGRectMake(aScrollView.frame.origin.x,
+                                          aScrollView.frame.size.height*0.25,
+                                          aScrollView.frame.size.width,
+                                          aScrollView.frame.size.height*0.25);
+    CGRect cellRect = [aScrollView convertRect:cell.frame toView:aScrollView.superview];
+    return CGRectIntersectsRect(scrollViewSubRect, cellRect);
+}
+
 
 #pragma mark Hide/Show Cells
 - (void)shouldHideDefinitionCells:(BOOL)shouldHide {

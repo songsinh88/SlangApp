@@ -20,6 +20,7 @@ static const NSInteger MAX_DEFINITIONS = 3;
 @synthesize definitions;
 @synthesize tags;
 @synthesize resultType;
+@synthesize vineVideos;
 
 - (id)initWithJSON:(NSDictionary *)json {
     self = [super init];
@@ -44,6 +45,8 @@ static const NSInteger MAX_DEFINITIONS = 3;
             
             definitions = [tmpDefinitions copy];
         }
+        
+        vineVideos = @[];
     }
     return self;
 }

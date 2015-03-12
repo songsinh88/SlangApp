@@ -34,6 +34,9 @@
 		BC0B35AD1AAD08D3009FB458 /* SLATagsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35AC1AAD08D3009FB458 /* SLATagsCell.m */; };
 		BC0B35B01AAD0931009FB458 /* SLATagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35AF1AAD0931009FB458 /* SLATagCell.m */; };
 		BC0B35B21AAD0943009FB458 /* SLATagCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC0B35B11AAD0943009FB458 /* SLATagCell.xib */; };
+		BC0B35B71AAEACFE009FB458 /* AWEasyVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0B35B61AAEACFE009FB458 /* AWEasyVideoPlayer.m */; };
+		BC46ED541AB015F1001C3C08 /* SLAVineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC46ED531AB015F1001C3C08 /* SLAVineCell.xib */; };
+		BC46ED5C1AB1535B001C3C08 /* SLAVineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BC46ED5B1AB1535B001C3C08 /* SLAVineCell.m */; };
 		C425C25856DE4A56B3DB9545 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 380E04B93492474AB9A38BE5 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -97,6 +100,11 @@
 		BC0B35AE1AAD0931009FB458 /* SLATagCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLATagCell.h; path = controllers/definition/SLATagCell.h; sourceTree = "<group>"; };
 		BC0B35AF1AAD0931009FB458 /* SLATagCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLATagCell.m; path = controllers/definition/SLATagCell.m; sourceTree = "<group>"; };
 		BC0B35B11AAD0943009FB458 /* SLATagCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLATagCell.xib; path = controllers/definition/SLATagCell.xib; sourceTree = "<group>"; };
+		BC0B35B51AAEACFE009FB458 /* AWEasyVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWEasyVideoPlayer.h; path = dependencies/AWEasyVideoPlayer/AWEasyVideoPlayer.h; sourceTree = "<group>"; };
+		BC0B35B61AAEACFE009FB458 /* AWEasyVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWEasyVideoPlayer.m; path = dependencies/AWEasyVideoPlayer/AWEasyVideoPlayer.m; sourceTree = "<group>"; };
+		BC46ED531AB015F1001C3C08 /* SLAVineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SLAVineCell.xib; path = controllers/definition/SLAVineCell.xib; sourceTree = "<group>"; };
+		BC46ED5A1AB1535B001C3C08 /* SLAVineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLAVineCell.h; path = controllers/definition/SLAVineCell.h; sourceTree = "<group>"; };
+		BC46ED5B1AB1535B001C3C08 /* SLAVineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLAVineCell.m; path = controllers/definition/SLAVineCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,7 @@
 				BC0B359E1AACF1C2009FB458 /* utils */,
 				BC0B35531AABAB54009FB458 /* Images.xcassets */,
 				BC0B35551AABAB54009FB458 /* LaunchScreen.xib */,
+				BC0B35B31AAEAC3F009FB458 /* dependencies */,
 				BC0B35461AABAB54009FB458 /* Supporting Files */,
 			);
 			path = SlangApp;
@@ -262,6 +271,7 @@
 		BC0B358B1AAC0E3A009FB458 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				BC46ED521AB015CA001C3C08 /* vine */,
 				BC0B35A71AAD07F6009FB458 /* definitions */,
 				BC0B35A81AAD0810009FB458 /* tags */,
 			);
@@ -307,6 +317,33 @@
 				BC0B35AF1AAD0931009FB458 /* SLATagCell.m */,
 			);
 			name = tags;
+			sourceTree = "<group>";
+		};
+		BC0B35B31AAEAC3F009FB458 /* dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35B41AAEACDC009FB458 /* AWEasyVideoPlayer */,
+			);
+			name = dependencies;
+			sourceTree = "<group>";
+		};
+		BC0B35B41AAEACDC009FB458 /* AWEasyVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				BC0B35B51AAEACFE009FB458 /* AWEasyVideoPlayer.h */,
+				BC0B35B61AAEACFE009FB458 /* AWEasyVideoPlayer.m */,
+			);
+			name = AWEasyVideoPlayer;
+			sourceTree = "<group>";
+		};
+		BC46ED521AB015CA001C3C08 /* vine */ = {
+			isa = PBXGroup;
+			children = (
+				BC46ED531AB015F1001C3C08 /* SLAVineCell.xib */,
+				BC46ED5A1AB1535B001C3C08 /* SLAVineCell.h */,
+				BC46ED5B1AB1535B001C3C08 /* SLAVineCell.m */,
+			);
+			name = vine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +430,7 @@
 			files = (
 				BC0B358D1AAC139C009FB458 /* SLADefinitionCell.xib in Resources */,
 				BC0B35521AABAB54009FB458 /* Main.storyboard in Resources */,
+				BC46ED541AB015F1001C3C08 /* SLAVineCell.xib in Resources */,
 				BC0B359A1AACE03F009FB458 /* SLADropdownHeaderCell.xib in Resources */,
 				BC0B35571AABAB54009FB458 /* LaunchScreen.xib in Resources */,
 				BC0B35A31AACF6CD009FB458 /* SLAExampleCell.xib in Resources */,
@@ -456,12 +494,14 @@
 				BC0B35721AABAD8B009FB458 /* SLADefinition.m in Sources */,
 				BC0B356F1AABAC3A009FB458 /* SLAWord.m in Sources */,
 				BC0B35A61AACF729009FB458 /* SLAExampleCell.m in Sources */,
+				BC46ED5C1AB1535B001C3C08 /* SLAVineCell.m in Sources */,
 				BC0B358A1AAC0BD7009FB458 /* SLADefinitionViewController.m in Sources */,
 				BC0B35871AAC041A009FB458 /* SLAHomeViewController.m in Sources */,
 				BC0B35AD1AAD08D3009FB458 /* SLATagsCell.m in Sources */,
 				BC0B35981AAC3A14009FB458 /* SLAWordCell.m in Sources */,
 				BC0B357D1AABE62B009FB458 /* SLAAPI.m in Sources */,
 				BC0B35751AABD1A9009FB458 /* SLAVineVideo.m in Sources */,
+				BC0B35B71AAEACFE009FB458 /* AWEasyVideoPlayer.m in Sources */,
 				BC0B35801AABEA5E009FB458 /* SLABaseAPI.m in Sources */,
 				BC0B35831AABF0E3009FB458 /* SLAWordDataSource.m in Sources */,
 				BC0B35931AAC16FF009FB458 /* SLADefinitionCell.m in Sources */,

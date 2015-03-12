@@ -16,5 +16,7 @@
 @property (nonatomic) BOOL hideDefinitions;
 @property (nonatomic) BOOL hideTags;
 @property (nonatomic) BOOL hideVines;
+@property (nonatomic) NSIndexPath *currentVineIndexPath;
+@property (nonatomic) CGFloat lastYOffset;
 
 @end

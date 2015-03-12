@@ -14,6 +14,7 @@
 @property (nonatomic) NSArray *definitions;
 @property (nonatomic) NSArray *tags;
 @property (nonatomic) NSString *resultType;
+@property (nonatomic) NSArray *vineVideos;
 
 - (id)initWithJSON:(NSDictionary*)json;
 
