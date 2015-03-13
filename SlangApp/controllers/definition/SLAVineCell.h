@@ -24,4 +24,7 @@
 
 - (void)configureCellUsingVine:(SLAVineVideo*)vineVideo;
 
+- (void)playVine;
+- (void)stopVine;
+
 @end

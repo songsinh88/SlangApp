@@ -27,6 +27,7 @@
     // Clear out values
     [avatarImageView setImage:nil];
     [vinePreviewImageView setImage:nil];
+    [vinePreviewImageView setUserInteractionEnabled:NO];
     nameLabel.text = @"";
     descriptionLabel.text = @"";
     
@@ -35,9 +36,6 @@
     avatarImageView.layer.borderColor = [UIColor slangGreen].CGColor;
     avatarImageView.layer.cornerRadius = avatarImageView.frame.size.width/2;
     avatarImageView.layer.masksToBounds = YES;
-    
-    // Init vine player
-    vinePlayer = [[AWEasyVideoPlayer alloc] init];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -71,15 +69,25 @@
     [vinePlayer setDelegate:self];
 }
 
+#pragma mark Play/Stop
+- (void)playVine {
+    if (vinePlayer.state != AWEasyVideoPlayerStatePlaying && vinePlayer.state != AWEasyVideoPlayerStatePaused) {
+        // Not playing or paused, go ahead and play
+        [vinePlayer play];
+        vinePreviewImageView.hidden = YES;
+    }
+}
+
+- (void)stopVine {
+    // Just stop man. Go home you're drunk
+    [vinePlayer stop];
+}
+
 #pragma mark AWEasyVideoPlayerDelegate
 - (void)videoPlayer:(AWEasyVideoPlayer *)videoPlayer changedState:(AWEasyVideoPlayerState)state {
     if (state == AWEasyVideoPlayerStateLoading || state == AWEasyVideoPlayerStateStopped) {
         // Show vine preview when video is loading/stopped
         vinePreviewImageView.hidden = NO;
-    }
-    else {
-        // While playing/paused hide vine preview
-        vinePreviewImageView.hidden = YES;
     }
 }
 

@@ -36,7 +36,6 @@
     if (self) {
         
         // setup UI
-        
         [self setBackgroundColor:[UIColor blackColor]];
         
         UIButton *actionButton = [[UIButton alloc] init];
@@ -51,6 +50,25 @@
     }
     return self;
     
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        // setup UI
+        [self setBackgroundColor:[UIColor blackColor]];
+        
+        UIButton *actionButton = [[UIButton alloc] init];
+        [self addSubview:actionButton];
+        [self setActionButton:actionButton];
+        
+        // setup internal
+        
+        [self setEndAction:AWEasyVideoPlayerEndActionStop];
+        [self setState:AWEasyVideoPlayerStateStopped];
+    }
+    return self;
 }
 
 -(void)layoutSubviews {
@@ -96,7 +114,7 @@
 
 -(void)stop {
     
-    if ([self state] != AWEasyVideoPlayerStateStopped) return;
+    if ([self state] == AWEasyVideoPlayerStateStopped) return;
     
     [self destroyPlayer];
     

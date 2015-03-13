@@ -17,6 +17,8 @@
 #import "SLAWord.h"
 #import "UIColor+SlangApp.h"
 
+static const NSUInteger VINE_SECTION = 3;
+
 @interface SLADefinitionViewController () <SLAWordDataSourceDelegate, UIScrollViewDelegate>
 @end
 
@@ -212,55 +214,63 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     NSArray* cells = self.tableView.visibleCells;
     
-    // Todo: Only do this when in Vine section
-    // Currently being done for all cell
-    // Idk
-    // Get realative offset to check if they are scrolling up/down
-    CGFloat currentOffset = scrollView.contentOffset.y;
-    currentOffset = currentOffset < 0 ? 0 : currentOffset;
-    CGFloat relativeOffset = lastYOffset - currentOffset;
+    // If all cells arent in vine section, we're wasting time
+    BOOL hasVineCell = NO;
+    for (UITableViewCell *c in cells) {
+        NSIndexPath *tmpIndexPath = [self.tableView indexPathForCell:c];
+        hasVineCell = (tmpIndexPath.section == VINE_SECTION) ? YES : hasVineCell;
+    }
+    if (!hasVineCell) return;
     
     // Store old vine index path
     NSIndexPath *oldVineIndexPath = currentVineIndexPath;
     
-    if (relativeOffset > 0) {
-        // Going up. Prioritize last cells
-        for(NSInteger i = 0; i<cells.count; i++) {
-            if ([self checkIntersectionOfCell:[cells objectAtIndex:i] inScrollView:scrollView]) {
-                // Cell intersect, make it current
-                currentVineIndexPath = [self.tableView indexPathForCell:[cells objectAtIndex:i]];
-            }
-        }
-    }
-    else {
-        // Going down. Prioritize first cells
-        for(NSInteger i = cells.count-1; i>=0; i--) {
-            if ([self checkIntersectionOfCell:[cells objectAtIndex:i] inScrollView:scrollView]) {
-                // Cell intersect, make it current
-                currentVineIndexPath = [self.tableView indexPathForCell:[cells objectAtIndex:i]];
+    // See which vine has a greater intersection with the vine content rect
+    CGRect currentVineRect = CGRectZero;
+    for(UITableViewCell *c in cells) {
+        if ([self checkIntersectionOfCell:c inScrollView:scrollView]) {
+            CGRect intersection = [self getIntersectionRectOfCell:c andScrollView:scrollView];
+            if (!CGRectIsNull(intersection)) {
+                if (intersection.size.height > currentVineRect.size.height) {
+                    currentVineRect = intersection;
+                    currentVineIndexPath = [self.tableView indexPathForCell:c];
+                }
             }
         }
     }
     
-    if (oldVineIndexPath != nil) {
-        // Stop the last video
-        
+    // Stop the old vine if different from the current vine
+    if (oldVineIndexPath != nil && currentVineIndexPath != nil && ![currentVineIndexPath isEqual:oldVineIndexPath] && oldVineIndexPath.section == VINE_SECTION) {
+        SLAVineCell *oldVineCell = (SLAVineCell *)[self.tableView cellForRowAtIndexPath:oldVineIndexPath];
+        [oldVineCell stopVine];
     }
     
-    // Play the current video
-    
-    // Set new last y offset
-    lastYOffset = scrollView.contentOffset.y;
+    // Play current cell if indexpath is in vine section
+    if (currentVineIndexPath != nil && oldVineIndexPath != nil && ![currentVineIndexPath isEqual:oldVineIndexPath] && currentVineIndexPath.section == VINE_SECTION) {
+        SLAVineCell *newVineCell = (SLAVineCell *)[self.tableView cellForRowAtIndexPath:currentVineIndexPath];
+        [newVineCell playVine];
+    }
 }
 
-- (BOOL)checkIntersectionOfCell:(SLAVineCell *)cell inScrollView:(UIScrollView *)aScrollView {
+- (CGRect)getIntersectionRectOfCell:(UITableViewCell *)cell andScrollView:(UIScrollView *)aScrollView {
+    CGRect scrollViewSubRect = [self vineContentRect];
+    CGRect cellRect = [aScrollView convertRect:cell.frame toView:aScrollView.superview];
+    return CGRectIntersection(scrollViewSubRect, cellRect);
+}
+
+- (BOOL)checkIntersectionOfCell:(UITableViewCell *)cell inScrollView:(UIScrollView *)aScrollView {
     // Check if cell intersects the second quarter of the tableview
-    CGRect scrollViewSubRect = CGRectMake(aScrollView.frame.origin.x,
-                                          aScrollView.frame.size.height*0.25,
-                                          aScrollView.frame.size.width,
-                                          aScrollView.frame.size.height*0.25);
+    CGRect scrollViewSubRect = [self vineContentRect];
     CGRect cellRect = [aScrollView convertRect:cell.frame toView:aScrollView.superview];
     return CGRectIntersectsRect(scrollViewSubRect, cellRect);
+}
+
+- (CGRect)vineContentRect {
+    // Area in which vine videos should start autoplay
+    return CGRectMake(self.tableView.frame.origin.x,
+                      self.tableView.frame.size.height*0.05,
+                      self.tableView.frame.size.width,
+                      self.tableView.frame.size.height*0.90);
 }
 
 
