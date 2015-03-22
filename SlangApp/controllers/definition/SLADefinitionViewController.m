@@ -7,7 +7,7 @@
 //
 
 #import "SLADefinitionViewController.h"
-#include "SLAWordCell.h"
+#import "SLAWordCell.h"
 #import "SLADefinitionCell.h"
 #import "SLAWordDataSource.h"
 #import "SLADropdownHeaderCell.h"
