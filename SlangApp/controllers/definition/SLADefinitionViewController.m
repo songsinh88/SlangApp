@@ -18,6 +18,7 @@
 #import "UIColor+SlangApp.h"
 
 static const NSUInteger VINE_SECTION = 3;
+static const CGFloat MAX_VELOCITY = 15.0;
 
 @interface SLADefinitionViewController () <SLAWordDataSourceDelegate, UIScrollViewDelegate>
 @end
@@ -212,6 +213,7 @@ static const NSUInteger VINE_SECTION = 3;
 
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    // Get visible cells
     NSArray* cells = self.tableView.visibleCells;
     
     // If all cells arent in vine section, we're wasting time
@@ -239,6 +241,11 @@ static const NSUInteger VINE_SECTION = 3;
         }
     }
     
+    // Get scrolling velocity
+    CGFloat scrollVelocity = scrollView.contentOffset.y - lastYOffset;
+    lastYOffset = scrollView.contentOffset.y;
+    scrollVelocity = (scrollVelocity < 0) ? scrollVelocity*-1 : scrollVelocity;
+    
     // Stop the old vine if different from the current vine
     if (oldVineIndexPath != nil && currentVineIndexPath != nil && ![currentVineIndexPath isEqual:oldVineIndexPath] && oldVineIndexPath.section == VINE_SECTION) {
         SLAVineCell *oldVineCell = (SLAVineCell *)[self.tableView cellForRowAtIndexPath:oldVineIndexPath];
@@ -246,9 +253,18 @@ static const NSUInteger VINE_SECTION = 3;
     }
     
     // Play current cell if indexpath is in vine section
-    if (currentVineIndexPath != nil && oldVineIndexPath != nil && ![currentVineIndexPath isEqual:oldVineIndexPath] && currentVineIndexPath.section == VINE_SECTION) {
+    if (currentVineIndexPath != nil && currentVineIndexPath.section == VINE_SECTION) {
+        
+        if (oldVineIndexPath != nil && ![currentVineIndexPath isEqual:oldVineIndexPath]) {
+            // If the old vine as the same as the current, no point in playing it
+            return;
+        }
+        
         SLAVineCell *newVineCell = (SLAVineCell *)[self.tableView cellForRowAtIndexPath:currentVineIndexPath];
-        [newVineCell playVine];
+        if (scrollVelocity < MAX_VELOCITY) {
+            // Only play a vine if the user isn't scrolling too fast
+            [newVineCell playVine];
+        }
     }
 }
 
